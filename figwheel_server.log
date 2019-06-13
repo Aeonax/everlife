@@ -1,0 +1,46 @@
+Compiling build :main to "resources/public/assets/js/everlife.js" from ["src"]...
+[36m----  Compiler Warning on   src/everlife/game_board.cljs   line:40  column:32  ----[0m
+
+  [1mNo such namespace: game-helpers, could not locate game_helpers.cljs, game_helpers.cljc, or JavaScript source providing "game-helpers" (Please check that namespaces with dashes use underscores in the ClojureScript file name)[0m
+
+  [36m36[0m  [36m   "Form with imputs will be here"])[0m
+  [36m37[0m  [36m[0m
+  [36m38[0m  [36m(rum/defc Board < rum/reactive [state][0m
+  [36m39[0m  [36m  (let [playing? (rum/react (rum/cursor-in state [:game :playing]))[0m
+  [33m40[0m  [1m        cells-count (rum/react game-helpers/cells)][0m
+  [0m  [0m  [33m                               ^--- No such namespace: game-helpers, could not locate game_helpers.cljs, game_helpers.cljc, or JavaScript source providing "game-helpers" (Please check that namespaces with dashes use underscores in the ClojureScript file name)[0m
+  [36m41[0m  [36m    [:.board[0m
+  [36m42[0m  [36m     (gaming-space state playing? cells-count)[0m
+  [36m43[0m  [36m     (Inputs state playing? cells-count)]))[0m
+  [36m44[0m  [36m[0m
+  [36m45[0m  [36m;;; OR with canvas?=))[0m
+
+[36m----  Compiler Warning : Please see src/everlife/game_board.cljs  ----[0m
+[36m----  Compiler Warning on   src/everlife/game_board.cljs   line:40  column:32  ----[0m
+
+  [1mUse of undeclared Var game-helpers/cells[0m
+
+  [36m36[0m  [36m   "Form with imputs will be here"])[0m
+  [36m37[0m  [36m[0m
+  [36m38[0m  [36m(rum/defc Board < rum/reactive [state][0m
+  [36m39[0m  [36m  (let [playing? (rum/react (rum/cursor-in state [:game :playing]))[0m
+  [33m40[0m  [1m        cells-count (rum/react game-helpers/cells)][0m
+  [0m  [0m  [33m                               ^--- Use of undeclared Var game-helpers/cells[0m
+  [36m41[0m  [36m    [:.board[0m
+  [36m42[0m  [36m     (gaming-space state playing? cells-count)[0m
+  [36m43[0m  [36m     (Inputs state playing? cells-count)]))[0m
+  [36m44[0m  [36m[0m
+  [36m45[0m  [36m;;; OR with canvas?=))[0m
+
+[36m----  Compiler Warning : Please see src/everlife/game_board.cljs  ----[0m
+[32mSuccessfully compiled build :main to "resources/public/assets/js/everlife.js" in 0.172 seconds.[0m
+notifying browser that file changed:  resources/public/assets/js/goog/deps.js
+notifying browser that file changed:  resources/public/assets/js/cljs_deps.js
+notifying browser that file changed:  resources/public/assets/js/everlife/game_board.js
+Compiling build :main to "resources/public/assets/js/everlife.js" from ["src"]...
+[32mSuccessfully compiled build :main to "resources/public/assets/js/everlife.js" in 0.143 seconds.[0m
+notifying browser that file changed:  resources/public/assets/js/cljs_deps.js
+notifying browser that file changed:  resources/public/assets/js/everlife/game_board.js
+Compiling build :main to "resources/public/assets/js/everlife.js" from ["src"]...
+[32mSuccessfully compiled build :main to "resources/public/assets/js/everlife.js" in 0.147 seconds.[0m
+notifying browser that file changed:  resources/public/assets/js/everlife/game_board.js
