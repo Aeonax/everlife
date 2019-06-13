@@ -4,7 +4,7 @@
 
 (defn run-cycle [state]
   (time
-   (reduce #(let [new-row (row/cycle state %2)]
+   (reduce #(let [new-row (row/survive-cycle state %2)]
               (if (empty? new-row)
                 %1
                 (assoc %1 %2 new-row)))

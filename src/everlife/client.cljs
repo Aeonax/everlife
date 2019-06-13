@@ -4,6 +4,8 @@
 
 (defonce state (atom {}))
 
+(set! (.-state js/window) #(clj->js @state))
+
 (rum/defc App []
   [:div
    [:.header "Everlife"]

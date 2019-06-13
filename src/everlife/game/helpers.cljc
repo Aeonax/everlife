@@ -2,9 +2,14 @@
 
 ;; (def current-state (atom []))
 
-(def cells (atom 9))
+(defonce cells (atom 9))
 
-(defn- real-index [indx]
+(defn swap-cells [input-value]
+  (let [value (- (int input-value) 1)]
+    (when-not (= @cells value)
+      (reset! cells value))))
+
+(defn real-index [indx cells-count]
   (println (str "executing real-index: " indx))
   (let [d-cells @cells]
     (cond
@@ -12,12 +17,15 @@
       (< indx 0) d-cells
       :else indx)))
 
-(def momoized-real-index (memoize real-index))
+(def memoized-real-index (memoize real-index))
+
+(defn endless-index [index]
+  (memoized-real-index index @cells))
 
 (defn build-surrounding-indexes
   ([indx] (build-surrounding-indexes #{} indx))
   ([set-storage indx]
    (conj set-storage
-         (momoized-real-index (- indx 1))
+         (endless-index (- indx 1))
          indx
-         (momoized-real-index (+ indx 1)))))
+         (endless-index (+ indx 1)))))
