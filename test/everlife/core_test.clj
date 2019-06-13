@@ -1,6 +1,6 @@
 (ns everlife.core-test
   (:require [clojure.test :refer :all]
-            [everlife.core :as core]))
+            [everlife.game.core :as core]))
 
 (def infinite-state {7 #{2} 9 #{2} 8 #{2}})
 

@@ -1,6 +1,6 @@
-(ns everlife.core
-  (:require [everlife.row :as row]
-            [everlife.helpers :as helpers]))
+(ns everlife.game.core
+  (:require [everlife.game.row :as row]
+            [everlife.game.helpers :as helpers]))
 
 (defn run-cycle [state]
   (time

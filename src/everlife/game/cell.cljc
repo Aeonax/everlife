@@ -1,6 +1,6 @@
-(ns everlife.cell
-  (:require [everlife.helpers :as helpers]
-            [clojure.set :as set]))
+(ns everlife.game.cell
+  (:require [clojure.set :as set]
+            [everlife.game.helpers :as helpers]))
 
 (println "here")
 

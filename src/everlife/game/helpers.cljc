@@ -1,4 +1,4 @@
-(ns everlife.helpers)
+(ns everlife.game.helpers)
 
 ;; (def current-state (atom []))
 

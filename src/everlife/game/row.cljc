@@ -1,7 +1,7 @@
-(ns everlife.row
-  (:require [everlife.cell :as cell]
-            [everlife.helpers :as helpers]
-            [clojure.set :as set]))
+(ns everlife.game.row
+  (:require [clojure.set :as set]
+            [everlife.game.cell :as cell]
+            [everlife.game.helpers :as helpers]))
 
 (defn build-related-rows [state row-indx]
   [(or (state (helpers/momoized-real-index (- row-indx 1))) #{})
