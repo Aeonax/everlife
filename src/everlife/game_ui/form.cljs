@@ -8,7 +8,7 @@
   [:.flex.flex-row.flex-center
    [:.flex.flex-column.mr-1
     (ui/LocalInput {:on-blur #(game-helpers/swap-cells %)
-                    :default-value (:cells-count options)
+                    :default-value (+ (:cells-count options) 1)
                     :container-class ["mb-1"]
                     :label "Cells Amount"})
     (ui/LocalInput {:on-blur #(swap! state assoc-in [:game :options :delay]
@@ -36,7 +36,7 @@
   [:div
    (ui/button {:on-click #(actions/pause-game state)
                :label "Pause"
-               :class :mx-1})
+               :class :mr-1})
    (ui/button {:on-click #(actions/reset-game state)
                :label "Reset Game"})])
 

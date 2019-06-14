@@ -6,9 +6,9 @@
   (time
    (reduce #(let [new-row (row/survive-cycle state %2)]
               (if (empty? new-row)
-                %1
+                (dissoc %1 %2)
                 (assoc %1 %2 new-row)))
-           {}
+           state
            (range (+ @helpers/cells 1)))))
 
 (defn build-random-state []
@@ -18,9 +18,9 @@
        (assoc state row-index
               (reduce
                #(if (pos? (rand-int 2))
-                  (conj %1 %2)
+                  (assoc %1 %2 true)
                   %1)
-               #{}
+               {}
                cells-range)))
      {}
      cells-range)))
