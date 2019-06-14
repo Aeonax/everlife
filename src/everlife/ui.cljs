@@ -16,7 +16,6 @@
 
 (rum/defcs LocalInput < (rum/local nil :local)
   {:will-mount (fn [state]
-                 (console.log (clj->js state))
                  (reset! (:local state) (-> state :rum/args last :default-value))
                  state)}
   [component-state {:keys [on-blur label container-class]}]

@@ -9,6 +9,8 @@
         options (assoc (or (rum/react (rum/cursor-in state [:game :options]))
                            {})
                        :cells-count cells-count)]
+    ;; TODO: remove option global react
+    ;; TODO: options unlocked? react
     (console.log "Rerendreing board " (clj->js options) (clj->js cells-count))
     [:.board
      (when (and cells-count
