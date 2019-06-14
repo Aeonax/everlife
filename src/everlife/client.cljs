@@ -1,6 +1,7 @@
 (ns everlife.client
   (:require [rum.core :as rum]
-            [everlife.game-board :as game-board]))
+            #_[everlife.game-board :as game-board]
+            [everlife.game-ui.core :as game]))
 
 (defonce state (atom {}))
 
@@ -9,6 +10,6 @@
 (rum/defc App []
   [:div
    [:.header "Everlife"]
-   (game-board/Board state)])
+   (game/Page state)])
 
 (rum/mount (App) (js/document.getElementById "app"))

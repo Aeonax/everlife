@@ -14,8 +14,8 @@
       [:.cell {:border (str "1px solid " (:main-black colors))
                :flex-grow 1}]
       [:.pickable {:cursor :pointer}
-       [:&:hover {:border-color :yellow}]]]]]
-   [:.background-main {:background-color :yellow}]
+       [:&:hover {:border-color (:main-active colors)}]]]]]
+   [:.background-main {:background-color (:main-active colors)}]
    [:.button {:border-radius :0.1875rem
               :transition "opacity 0.2s, box-shadow 0.2s"
               :padding "0.375rem 1rem"
@@ -27,6 +27,9 @@
               :display :inline-block
               :cursor :pointer}]
    [:.ml-1 {:margin-left :1em}]
+   [:.mr-1 {:margin-right :1em}]
+   [:.mt-1 {:margin-top :1em}]
+   [:.mb-1 {:margin-bottom :1em}]
    [:.mt-2 {:margin-top :2em}]
    [:.mx-1 {:margin-left :1em
             :margin-right :1em}]
