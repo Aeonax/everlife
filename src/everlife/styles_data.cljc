@@ -5,4 +5,5 @@
 
 (def colors {:main-green "#59B31D"
              :main-black "black"
+             :dark-green "#41751f"
              :main-active "#ff8600"})

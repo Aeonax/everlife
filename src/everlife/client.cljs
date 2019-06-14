@@ -9,7 +9,7 @@
 
 (rum/defc App []
   [:div
-   [:.header "Everlife"]
+   [:.header.my-1 "Everlife"]
    (game/Page state)])
 
 (rum/mount (App) (js/document.getElementById "app"))

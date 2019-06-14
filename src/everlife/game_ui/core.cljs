@@ -14,4 +14,5 @@
      (when (and cells-count
                 (pos? cells-count))
        (board/gaming-space state options))
+     ;; TODO: need to relocate them from bottom in to right part of the screen
      (form/Inputs state options)]))
