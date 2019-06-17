@@ -5,8 +5,8 @@
             [everlife.game.helpers :as game-helpers]))
 
 (defn initial-inputs [state options]
-  [:.flex.flex-row.flex-center
-   [:.flex.flex-column.mr-1
+  [:.flex.flex-column
+   [:.flex.flex-column.mt-1
     (ui/LocalInput {:on-blur #(game-helpers/swap-cells %)
                     :default-value (+ (:cells-count options) 1)
                     :container-class ["mb-1"]
@@ -17,7 +17,7 @@
                                       1000)
                     :label "Frame delay(s)"})]
        
-   [:.flex.flex-column
+   [:.flex.flex-column.my-1
     (ui/checkbox {:on-click #(swap! state update-in [:game :options :movie?] not)
                   :label "Switch on Video mode"
                   :container-class :mb-1
@@ -25,7 +25,7 @@
     (ui/checkbox {:on-click #(swap! state update-in [:game :options :interfere?] not)
                   :label "Allow interactions during game"
                   :value (:interfere? options)})]
-   [:.flex.flex-column.mx-1
+   [:.flex.flex-column
     (ui/button {:on-click #(actions/random-board state)
                 :label "Randomize field"
                 :class :mb-1})
@@ -33,30 +33,29 @@
                 :label "Start Game"})]])
 
 (defn inputs-during-the-game [state options]
-  [:div
+  [:.flex.flex-column
    (ui/button {:on-click #(actions/pause-game state)
                :label "Pause"
-               :class :mr-1})
+               :class :my-1})
    (ui/button {:on-click #(actions/reset-game state)
                :label "Reset Game"})])
 
 (defn static-inputs [state options]
-  [:.flex.flex-row
+  [:.flex.flex-column
    (ui/button {:on-click #(actions/run-cycle state)
-               :class :mr-1
+               :class :my-1
                :label "Run Cycle"})
    (when (-> @state :game :initial-state)
      (ui/button {:on-click #(actions/reset-game state)
                  :label "Reset Desk"}))
    (ui/button {:on-click #(actions/reset-game state {})
-               :class :ml-1
+               :class :mt-1
                :label "Clean Desk"})])
 
 (rum/defc Inputs [state options]
-  [:.mt-2
-   [:.flex.flex-row.flex-center
-    (static-inputs state options)]
-   [:.mt-1.flex.flex-row.flex-center
+  [:.inputs-column.ml-1
+   (static-inputs state options)
+   [:.flex.flex-column
     (if (:playing? options)
       (inputs-during-the-game state options)
       (initial-inputs state options))]])

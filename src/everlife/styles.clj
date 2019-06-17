@@ -12,14 +12,16 @@
               :color (:dark-green colors)
               :font-weight 800
               :text-align :center}]
-   [:.board {:width :1250px}
+   [:.board {:width :1250px
+             :display :flex}
     [:.gaming-space {:width (int-to-px data/desk-width)
                      :height (int-to-px data/desk-height)}
      [:.row {:flex-grow 1}
       [:.cell {:border (str "1px solid " (:main-black colors))
                :flex-grow 1}]
       [:.pickable {:cursor :pointer}
-       [:&:hover {:border-color (:main-active colors)}]]]]]
+       [:&:hover {:border-color (:main-active colors)}]]]]
+    [:.inputs-column {:width (int-to-px (- 1000 data/desk-width))}]]
    [:.background-main {:background-color (:main-active colors)}]
    [:.button {:border-radius :0.1875rem
               :transition "opacity 0.2s, box-shadow 0.2s"
