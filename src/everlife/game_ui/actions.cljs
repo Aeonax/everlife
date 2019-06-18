@@ -3,9 +3,13 @@
 
 (defn run-cycle [state]
   (let [game (:game @state)
-        current-state (:current-state game)]
+        current-state (:current-state game)
+        new-state (game/run-cycle current-state)]
+    (when (and (= current-state new-state)
+               (-> game :options :playing?))
+      (swap! state assoc-in [:game :options :playing?] nil))
     (swap! state assoc-in [:game :current-state]
-           (game/run-cycle current-state))))
+           new-state)))
 
 (defn loop-game [state]
   (let [options (-> @state :game :options)]
